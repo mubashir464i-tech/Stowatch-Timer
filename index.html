@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stopwatch">
+        <h1 id="display">00:00:00</h1>
+
+        <div class="buttons">
+            <button id="start" title="Start">
+                <i class="fa-solid fa-play"></i>
+            </button>
+
+            <button id="store" title="Save">
+                <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+
+            <button id="stop" title="Stop">
+                <i class="fa-solid fa-stop"></i>
+            </button>
+
+            <button id="clear" title="Delete">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+
+        <ol id="listlap"></ol>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

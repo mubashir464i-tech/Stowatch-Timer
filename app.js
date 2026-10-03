@@ -1,0 +1,56 @@
+let start = document.getElementById("start");
+let store = document.getElementById("store");
+let stop = document.getElementById("stop");
+let clear = document.getElementById("clear");
+let display = document.getElementById("display");
+let second = 0;
+let timer = null;
+let array = [];
+let listlap = document.getElementById("listlap");
+
+store.addEventListener("click", function () {
+    if (array.length < 5) {
+        array.push(display.innerText);
+        listlap.innerHTML = "";
+
+        for (var value of array) {
+            listlap.innerHTML += `<li>${value}</li>`;
+        }
+
+        if (array.length === 5) {
+            store.disabled = true;
+        }
+    } else {
+        store.disabled = true;
+    }
+});
+
+start.addEventListener("click", function () {
+    timer = setInterval(() => {
+        updateTime();
+        start.disabled = true;
+    }, 1000);
+});
+
+clear.addEventListener("click", function () {
+    clearInterval(timer);
+    second = 0;
+    array = [];
+    listlap.innerHTML = "";
+    display.innerText = "00:00:00";
+    start.disabled = false;
+    store.disabled = false;
+});
+
+stop.addEventListener("click", function () {
+    clearInterval(timer);
+    start.disabled = false;
+});
+
+function updateTime() {
+    second = second + 1;
+    let hrs = Math.floor(second / 3600);
+    let mins = Math.floor((second % 3600) / 60);
+    let sec = second % 60;
+    display.innerText = hrs.toString().padStart(2, '0') + ":" + mins.toString().padStart(2, '0') + ":" + sec.toString().padStart(2, '0');
+}

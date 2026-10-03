@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #edf2f7 0%, #dfe7ee 100%);
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+}
+
+.stopwatch {
+    width: min(90vw, 500px);
+    background: #f9fafb;
+    border: 1px solid #d8e0ea;
+    border-radius: 24px;
+    padding: 30px 20px 22px;
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+}
+
+#display {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1f2937;
+    color: #ffffff;
+    font-family: "Segoe UI", monospace;
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 5px solid #e5e7eb;
+    box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 58px;
+    height: 58px;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 14px rgba(15, 23, 42, 0.12);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+#start {
+    background: #22c55e;
+}
+
+#store {
+    background: #3b82f6;
+}
+
+#stop {
+    background: #f59e0b;
+}
+
+#clear {
+    background: #ef4444;
+}
+
+#listlap {
+    width: min(100%, 220px);
+    margin: 18px auto 0;
+    padding-left: 24px;
+    color: #374151;
+    font-size: 15px;
+}
+
+#listlap li {
+    padding: 8px 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background: #eef2f7;
+    border: 1px solid #dfe6ee;
+}
+
+@media (max-width: 480px) {
+    .stopwatch {
+        padding: 24px 16px 18px;
+    }
+
+    #display {
+        width: 220px;
+        height: 220px;
+    }
+
+    button {
+        width: 52px;
+        height: 52px;
+        font-size: 18px;
+    }
+}
